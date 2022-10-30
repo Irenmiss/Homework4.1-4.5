@@ -1,51 +1,70 @@
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Задание 4.1");
-        int clientOS = 0;
+        int clientOS = 1;
         boolean iOS = clientOS == 0;
         if (iOS) {
             System.out.println("Установите версию приложения для iOS по ссылке");
         } else {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
+
         System.out.println("Задание 4.2");
-        int clientOS1 = 1;
-        int clientDeviceYear = 2016;
-        if (clientOS1 == 0 && clientDeviceYear == 2015) {
+        int clientOS1 = 0;
+        int clientDeviceYear = 2010;
+        if (clientOS1 == 0 && clientDeviceYear <= 2015) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (clientOS1 == 0 & clientDeviceYear != 2015) {
-                System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (clientOS1 == 0 & clientDeviceYear > 2015) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
         }
-        if (clientOS1 !=0 && clientDeviceYear == 2015) {
+        if (clientOS1 !=0 && clientDeviceYear <= 2015) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else if (clientOS1 !=0 && clientDeviceYear != 2015) {
+        } else if (clientOS1 !=0 && clientDeviceYear > 2015) {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
+
         System.out.println("Задание 4.3");
-        int year = 1600;
-        double divisionOnFour = year % 4;
-        double divisionOnHundred = year % 100;
-        double divisionOnFourHundred = year % 400;
-        boolean remainderFourIsNull = divisionOnFour == 0;
-        boolean remainderHundredIdNotNull = divisionOnHundred != 0;
-        boolean remainderFourHundred = divisionOnFourHundred == 0;
-        if (remainderFourIsNull && remainderHundredIdNotNull) {
+        int year = 1900;
+        if (year % 4 == 0 && year % 100 !=0) {
             System.out.println("Год является високосным");
-        } else if (divisionOnHundred == 0 && divisionOnFour == 0 && divisionOnFourHundred ==0) {
+        } else if (year % 100 == 0 && year % 4 == 0 && year % 400 == 0) {
             System.out.println("Год является високосным");
         } else {
             System.out.println("Год не является високосным");
         }
-        System.out.println("Задание 4.4");
-        int deliveryDistance = 1000;
+
+        System.out.println("Задание 4.4. Вариант 1."); // Способ решения, если требуется посчитать любое расстояние
+        int deliveryDistance = 500;
         int deliveryDays = 1;
+
         if (deliveryDistance > 20) {
-            deliveryDays++;
+            deliveryDays = deliveryDays + 1;
         }
         if (deliveryDistance > 60) {
-            deliveryDays++;
+            deliveryDays = deliveryDays + 1;
+        }
+        if (deliveryDistance > 100) {
+            deliveryDays = ((deliveryDistance - 20) / 40) + 1;
         }
         System.out.println("Потребуется дней: " + deliveryDays);
+
+        System.out.println("Задание 4.4. Вариант 2."); // Способ решения, если банк готов доставлять только в пределах 100 км
+        int deliveryDistance1 = 1000;
+        int deliveryDays1 = 1;
+        if (deliveryDistance1 <= 20) {
+            System.out.println("Потребуется дней: 1");
+        }
+        else if (deliveryDistance1 > 20 && deliveryDistance1 <= 60) {
+            System.out.println("Потребуется дней: 2");
+        }
+        else if (deliveryDistance1 > 60 && deliveryDistance1 <= 100) {
+            System.out.println("Потребуется дней: 3");
+        }
+        else {
+            System.out.println("Доставка на расстояние более чем 100 км не осуществляется.");
+        }
+
         System.out.println("Задание 4.5");
         int monthNumber = 15;
         switch (monthNumber) {
