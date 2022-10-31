@@ -18,9 +18,9 @@ public class Main {
         } else if (clientOS1 == 0 & clientDeviceYear > 2015) {
             System.out.println("Установите версию приложения для iOS по ссылке");
         }
-        if (clientOS1 !=0 && clientDeviceYear <= 2015) {
+        if (clientOS1 == 1 && clientDeviceYear <= 2015) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else if (clientOS1 !=0 && clientDeviceYear > 2015) {
+        } else if (clientOS1 == 1 && clientDeviceYear > 2015) {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
 
@@ -34,23 +34,8 @@ public class Main {
             System.out.println("Год не является високосным");
         }
 
-        System.out.println("Задание 4.4. Вариант 1."); // Способ решения, если требуется посчитать любое расстояние
-        int deliveryDistance = 500;
-        int deliveryDays = 1;
-
-        if (deliveryDistance > 20) {
-            deliveryDays = deliveryDays + 1;
-        }
-        if (deliveryDistance > 60) {
-            deliveryDays = deliveryDays + 1;
-        }
-        if (deliveryDistance > 100) {
-            deliveryDays = ((deliveryDistance - 20) / 40) + 1;
-        }
-        System.out.println("Потребуется дней: " + deliveryDays);
-
-        System.out.println("Задание 4.4. Вариант 2."); // Способ решения, если банк готов доставлять только в пределах 100 км
-        int deliveryDistance1 = 1000;
+        System.out.println("Задание 4.4");
+        int deliveryDistance1 = 120;
         int deliveryDays1 = 1;
         if (deliveryDistance1 <= 20) {
             System.out.println("Потребуется дней: 1");
